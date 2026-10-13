@@ -12,6 +12,8 @@ A focused full-stack application for coordinating shared rooms and equipment. It
 - Cancel ongoing/upcoming reservations and retain cancelled booking history.
 - Display all booking times in Sri Lanka time (Asia/Colombo).
 - Show validation, pending, empty, and database-unavailable states.
+- Live workspace overview with resource/booking totals and the next three reservations.
+- Shared navigation, responsive layouts, visible keyboard focus, and skip-to-content access.
 
 ## Technology and architecture
 

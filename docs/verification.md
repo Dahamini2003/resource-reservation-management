@@ -15,6 +15,9 @@ Verification date: 13 October 2026 (Sri Lanka).
 | Browser: availability, invalid filter, cancellation/history | Passed |
 | Browser: edit, deactivate, reactivate resource; preserve booking | Passed |
 | ER diagram rendering | Visually inspected |
+| Redesigned UI: overview totals and preview after saving a booking | Passed |
+| Redesigned UI: reservation page at 390px phone viewport | Passed: no horizontal overflow |
+| Redesigned UI: desktop overview/resources/reservations | Visually inspected |
 
 Browser and database fixtures were dedicated temporary records and removed after verification. Existing user resources and bookings were preserved.
 
