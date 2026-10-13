@@ -6,16 +6,27 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:create": "node --env-file-if-exists=.env.local scripts/db.mjs create",
+    "db:migrate": "node --env-file-if-exists=.env.local scripts/db.mjs migrate",
+    "db:seed": "node --env-file-if-exists=.env.local scripts/db.mjs seed",
+    "db:check": "node --env-file-if-exists=.env.local scripts/db.mjs check",
+    "db:test": "node --env-file-if-exists=.env.local scripts/db-test.mjs",
+    "test:booking": "node --experimental-strip-types scripts/booking-validation-test.mjs",
+    "db:test-concurrency": "node --env-file-if-exists=.env.local scripts/db-concurrency-test.mjs",
+    "db:test-setup": "node --env-file-if-exists=.env.local scripts/fresh-setup-test.mjs"
   },
   "dependencies": {
     "next": "16.4.0",
+    "pg": "^8.23.1",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

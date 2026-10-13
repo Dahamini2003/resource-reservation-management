@@ -1,9 +1,12 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <main className="mx-auto w-full max-w-5xl px-6 py-16 sm:py-24">
       <p className="text-sm font-semibold uppercase tracking-widest text-teal-700">Resource Reservation</p>
       <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">Shared resources. Clear schedules.</h1>
       <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">A central place to organize rooms and equipment, check availability, and coordinate reservations.</p>
+      <Link href="/resources" className="mt-8 inline-block rounded-lg bg-teal-800 px-6 py-3 font-semibold text-white hover:bg-teal-900">Manage resources</Link>
       <section aria-labelledby="workflow" className="mt-12">
         <h2 id="workflow" className="text-xl font-semibold">How reservations will work</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -20,7 +23,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <p className="mt-10 text-sm text-slate-500">Initial project setup. Resource management and booking features are coming next.</p>
+      <Link href="/reservations" className="mt-8 inline-block font-semibold text-teal-800 underline underline-offset-4">Make a reservation</Link>
     </main>
   );
 }

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="650" viewBox="0 0 1120 650" role="img" aria-labelledby="title desc">
+  <title id="title">Resource Reservation Management System ER Diagram</title>
+  <desc id="desc">One resource has zero or more reservations. Each reservation has exactly one resource. Tables show primary keys, foreign keys, and PostgreSQL field types.</desc>
+  <style>text{font-family:Arial,Helvetica,sans-serif;fill:#0f172a}.heading{font-size:24px;font-weight:700}.tableTitle{font-size:21px;fill:white;font-weight:700}.field{font-size:16px}.type{font-size:15px;fill:#475569}.note{font-size:16px;fill:#475569}.key{font-size:13px;fill:#0f766e;font-weight:700}</style>
+  <rect width="1120" height="650" fill="#f8fafc"/>
+  <text x="50" y="48" class="heading">Resource Reservation Management System</text>
+  <text x="50" y="77" class="note">Database design | PostgreSQL | One resource, many reservations</text>
+  <rect x="50" y="110" width="390" height="285" rx="12" fill="white" stroke="#cbd5e1"/>
+  <path d="M62 110H428Q440 110 440 122V161H50V122Q50 110 62 110" fill="#115e59"/>
+  <text x="70" y="143" class="tableTitle">resources</text>
+  <text x="70" y="194" class="field">id</text><text x="240" y="194" class="type">UUID</text><text x="390" y="194" class="key">PK</text>
+  <text x="70" y="229" class="field">name</text><text x="240" y="229" class="type">VARCHAR(120)</text>
+  <text x="70" y="264" class="field">description</text><text x="240" y="264" class="type">TEXT</text>
+  <text x="70" y="299" class="field">location</text><text x="240" y="299" class="type">VARCHAR(200)</text>
+  <text x="70" y="334" class="field">is_active</text><text x="240" y="334" class="type">BOOLEAN</text>
+  <text x="70" y="369" class="field">created_at</text><text x="240" y="369" class="type">TIMESTAMPTZ</text>
+  <rect x="670" y="110" width="400" height="390" rx="12" fill="white" stroke="#cbd5e1"/>
+  <path d="M682 110H1058Q1070 110 1070 122V161H670V122Q670 110 682 110" fill="#115e59"/>
+  <text x="690" y="143" class="tableTitle">reservations</text>
+  <text x="690" y="194" class="field">id</text><text x="875" y="194" class="type">UUID</text><text x="1025" y="194" class="key">PK</text>
+  <text x="690" y="229" class="field">resource_id</text><text x="875" y="229" class="type">UUID</text><text x="1025" y="229" class="key">FK</text>
+  <text x="690" y="264" class="field">requester_name</text><text x="875" y="264" class="type">VARCHAR(120)</text>
+  <text x="690" y="299" class="field">requester_email</text><text x="875" y="299" class="type">VARCHAR(254)</text>
+  <text x="690" y="334" class="field">purpose</text><text x="875" y="334" class="type">VARCHAR(500)</text>
+  <text x="690" y="369" class="field">starts_at</text><text x="875" y="369" class="type">TIMESTAMPTZ</text>
+  <text x="690" y="404" class="field">ends_at</text><text x="875" y="404" class="type">TIMESTAMPTZ</text>
+  <text x="690" y="439" class="field">status</text><text x="875" y="439" class="type">VARCHAR(20)</text>
+  <text x="690" y="474" class="field">created_at</text><text x="875" y="474" class="type">TIMESTAMPTZ</text>
+  <path d="M440 229H670M452 217V241M462 217V241M650 229L670 214M650 229L670 244" fill="none" stroke="#0f766e" stroke-width="2"/>
+  <circle cx="638" cy="229" r="6" fill="#f8fafc" stroke="#0f766e" stroke-width="2"/>
+  <text x="490" y="205" class="note">has bookings</text>
+  <text x="460" y="274" class="note">1</text><text x="610" y="274" class="note">0..many</text>
+  <text x="50" y="540" class="note">PK = primary key | FK = foreign key | All fields are NOT NULL</text>
+  <text x="50" y="570" class="note">Confirmed bookings cannot overlap for the same resource. End must be later than start.</text>
+  <text x="50" y="600" class="note">Cancellation preserves rows. Resource deletion is restricted when reservations reference it.</text>
+  <text x="50" y="630" class="note">Internal setup table: schema_migrations (name PK, applied_at). Business entities shown above.</text>
+</svg>
